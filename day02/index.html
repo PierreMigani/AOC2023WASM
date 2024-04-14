@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Day 2: Cube Conundrum</title>
+  </head>
+  <body>
+    <textarea id="input" rows=20></textarea>
+    <button id="run">Run</button>
+
+    <div class="day-results">
+        <p>Part One Result: <span id="part-one-result"></span></p>
+        <p>Part Two Result: <span id="part-two-result"></span></p>
+    </div>
+
+    <script type="module">
+      import init, { compute_part1 } from "./pkg/day02.js";
+      init().then(() => {
+        const input = document.getElementById("input");
+        const run = document.getElementById("run");
+        const partOneResult = document.getElementById("part-one-result");
+        // const partTwoResult = document.getElementById("part-two-result");
+
+        run.addEventListener("click", () => {
+          const part1 = compute_part1(input.value);
+          partOneResult.textContent = part1;
+
+          // const part2 = compute_part2(input.value);
+          // partTwoResult.textContent = part2;
+        });
+      });
+    </script>
+  </body>
+</html>
